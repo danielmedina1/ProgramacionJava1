@@ -1,0 +1,224 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
+import javax.swing.JButton;
+import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class WhatsApp extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField nombre;
+	private JTextField precio;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					WhatsApp frame = new WhatsApp();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public WhatsApp() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("ENTRADA DE DATOS DE PRODUCTOS");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(29, 11, 313, 33);
+		contentPane.add(lblNewLabel);
+		
+		JPanel cajan = new JPanel();
+		cajan.setBackground(new Color(128, 128, 128));
+		cajan.setBounds(10, 55, 414, 195);
+		contentPane.add(cajan);
+		cajan.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nombre del producto:");
+		lblNewLabel_1.setBounds(10, 11, 104, 14);
+		cajan.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Tipo de producto:");
+		lblNewLabel_2.setBounds(10, 36, 85, 14);
+		cajan.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Precio del producto:");
+		lblNewLabel_3.setBounds(10, 61, 96, 14);
+		cajan.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Categoria:");
+		lblNewLabel_4.setBounds(10, 86, 51, 14);
+		cajan.add(lblNewLabel_4);
+		
+		nombre = new JTextField();
+		nombre.setBounds(124, 8, 180, 20);
+		cajan.add(nombre);
+		nombre.setColumns(10);
+		
+		JCheckBox tasa = new JCheckBox("Aplicar tasa");
+		tasa.setBounds(311, 32, 97, 23);
+		cajan.add(tasa);
+		
+		
+		JComboBox tipo = new JComboBox();
+		tipo.setModel(new DefaultComboBoxModel(new String[] {"De temporada", "Fuera de temporada"}));
+		tipo.setBounds(124, 32, 180, 22);
+		cajan.add(tipo);
+		
+		precio = new JTextField();
+		precio.setBounds(124, 58, 180, 20);
+		cajan.add(precio);
+		precio.setColumns(10);
+		
+		JRadioButton extra = new JRadioButton("Extra");
+		buttonGroup.add(extra);
+		extra.setBounds(67, 82, 109, 23);
+		cajan.add(extra);
+		ButtonModel ex=extra.getModel();
+		
+		JRadioButton segunda = new JRadioButton("Segunda");
+		buttonGroup.add(segunda);
+		segunda.setBounds(195, 82, 109, 23);
+		cajan.add(segunda);
+		ButtonModel seg=segunda.getModel();
+		
+		JRadioButton primera = new JRadioButton("Primera");
+		buttonGroup.add(primera);
+		primera.setBounds(67, 108, 109, 23);
+		cajan.add(primera);
+		ButtonModel prim=primera.getModel();
+		
+		JRadioButton superextra = new JRadioButton("Super-Extra");
+		buttonGroup.add(superextra);
+		superextra.setBounds(195, 108, 109, 23);
+		cajan.add(superextra);
+		ButtonModel supex=superextra.getModel();
+		
+		JLabel lblNewLabel_5 = new JLabel("IVA:");
+		lblNewLabel_5.setBounds(10, 139, 51, 14);
+		cajan.add(lblNewLabel_5);
+		
+		JRadioButton cuatro = new JRadioButton("4%");
+		buttonGroup_1.add(cuatro);
+		cuatro.setBounds(67, 134, 51, 23);
+		cajan.add(cuatro);
+		ButtonModel cua=cuatro.getModel();
+		
+		JRadioButton diez = new JRadioButton("10%");
+		buttonGroup_1.add(diez);
+		diez.setBounds(124, 134, 51, 23);
+		cajan.add(diez);
+		ButtonModel die=diez.getModel();
+		
+		JRadioButton veintiuno = new JRadioButton("21%");
+		buttonGroup_1.add(veintiuno);
+		veintiuno.setBounds(195, 134, 51, 23);
+		cajan.add(veintiuno);
+		ButtonModel vei=veintiuno.getModel();
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 261, 414, 189);
+		contentPane.add(scrollPane);
+		
+		
+		JButton verdatos = new JButton("Ver datos tecleados");
+		JTextArea textArea;
+		textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
+		verdatos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText("El nombre del producto es: "+nombre.getText());
+				textArea.append("\nEl tipo de producto es: "+tipo.getSelectedIndex());
+				textArea.append("\n"+tipo.getSelectedItem());
+				textArea.append("\nEl precio es: "+precio.getText());
+				
+				if(tasa.isSelected()) {textArea.append("\nAplicaste la tasa");}
+				
+				if(buttonGroup.getSelection().equals(ex)) {textArea.append("\nPulsaste extra");}
+				if(buttonGroup.getSelection().equals(prim)) {textArea.append("\nPulsaste primera");}
+				if(buttonGroup.getSelection().equals(seg)) {textArea.append("\nPulsaste segunda");}
+				if(buttonGroup.getSelection().equals(supex)) {textArea.append("\nPulsaste super extar");}
+				
+				if(buttonGroup_1.getSelection().equals(cua)) {textArea.append("\nPulsaste 4");}
+				if(buttonGroup_1.getSelection().equals(die)) {textArea.append("\nPulsaste 10");}
+				if(buttonGroup_1.getSelection().equals(vei)) {textArea.append("\nPulsaste 21");}
+				
+				
+				
+				
+				
+			}
+		});
+		verdatos.setBounds(67, 164, 136, 23);
+		cajan.add(verdatos);
+		
+		JButton btnNewButton_1 = new JButton("Limpiar datos");
+		btnNewButton_1.setBounds(67, 164, 136, 23);
+		cajan.add(btnNewButton_1);
+		
+		JButton limpiar = new JButton("Limpiar datos");
+		limpiar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(" ");
+				nombre.setText(" ");
+				precio.setText(" ");
+				
+				
+				
+				
+				if(buttonGroup.getSelection().equals(ex)) {textArea.append("\n ");}
+				if(buttonGroup.getSelection().equals(prim)) {textArea.append("\n ");}
+				if(buttonGroup.getSelection().equals(seg)) {textArea.append("\n ");}
+				if(buttonGroup.getSelection().equals(supex)) {textArea.append("\n ");}
+				
+				if(buttonGroup_1.getSelection().equals(cua)) {textArea.append("\n ");}
+				if(buttonGroup_1.getSelection().equals(die)) {textArea.append("\n ");}
+				if(buttonGroup_1.getSelection().equals(vei)) {textArea.append("\n ");}
+				
+				
+				
+			}
+		});
+		limpiar.setBounds(215, 164, 114, 23);
+		cajan.add(limpiar);
+		
+
+		
+		
+	}
+}

@@ -1,0 +1,8 @@
+package lorca;
+
+public interface Valida {
+	public boolean valida(String cadena);
+	
+	
+
+}

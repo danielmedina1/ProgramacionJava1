@@ -1,0 +1,50 @@
+package Unidad4Actividades;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Bingo {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		String nombre1="";
+		String nombre2="";
+		int boleto1[]=new int[5];
+		int boleto2[]=new int[5];
+		
+		nombre1=teclado.next();
+		nombre2=teclado.next();
+		
+		getBoleto(boleto1);
+		getBoleto(boleto2);
+//		System.out.println(Arrays.toString(boleto1));
+//		System.out.println(Arrays.toString(boleto2));
+		
+		String alias1=getAlias(nombre1);
+		String alias2=getAlias(nombre2);
+		
+		imprimeJugador(nombre1, alias1, boleto1);
+		imprimeJugador(nombre2, alias2, boleto2);
+		
+		System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+		
+	}
+
+	private static void imprimeJugador(String nombre, String alias, int[] boleto) {
+		System.out.println("El jugador "+nombre+" con alias "+alias+" tiene el boleto: "+Arrays.toString(boleto));
+		
+	}
+
+	private static String getAlias(String nombre) {
+		if(nombre.length()>=3) {return "j"+nombre.substring(0, 3)+(int)(1+Math.random()*100);}
+		else {return "j"+nombre+(int)(1+Math.random()*100);}
+	}
+
+	private static void getBoleto(int[] boleto) {
+		for (int i = 0; i < boleto.length; i++) {
+			boleto[i]=(int)(1+Math.random()*20);	
+		}
+		Arrays.sort(boleto);
+	}
+
+}

@@ -1,0 +1,54 @@
+package agenda;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+public class Agenda {
+	private ArrayList<Contacto>lista;
+
+	public Agenda() {
+		this.lista = new ArrayList<>();
+	}
+
+	public ArrayList<Contacto> getLista() {
+		return lista;
+	}
+
+	public void setLista(ArrayList<Contacto> lista) {
+		this.lista = lista;
+	}
+	
+	public void cargarAgenda(String filename) {
+		
+	}
+	
+	public void guardarAgenda(String filename) {
+		try {
+			FileOutputStream fo=new FileOutputStream(filename);
+			ObjectOutputStream os=new ObjectOutputStream(fo);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void imprimirAgenda() {
+		System.out.println("Los contactos son: ");
+		for (Contacto c : this.getLista()) {
+			System.out.println(c.getNombre()+" "+c.getTelefono());
+		}
+	}
+	public void añadirContacto(Contacto c) {
+		this.getLista().add(c);
+	}
+	public void borrarContacto(String nombre) {
+		for (int i = 0; i < this.getLista().size(); i++) {
+			if(this.getLista().get(i).getNombre().equalsIgnoreCase(nombre)) {
+				this.getLista().remove(i);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,38 @@
+package ferreteria;
+
+import java.util.ArrayList;
+
+public class Programa {
+	ArrayList<Pieza> piezas=new ArrayList<>();
+	ArrayList<Proveedor> prov=new ArrayList<>();
+	
+	
+	
+	public ArrayList<Pieza> getPiezas() {
+		return piezas;
+	}
+
+	public void setPiezas(ArrayList<Pieza> piezas) {
+		this.piezas = piezas;
+	}
+
+	public ArrayList<Proveedor> getProv() {
+		return prov;
+	}
+
+	public void setProv(ArrayList<Proveedor> prov) {
+		this.prov = prov;
+	}
+
+	public void generarFichero (String filename) {
+	}
+	
+	public static void main(String[] args) {
+		Programa p=new Programa();
+		Utilidades u=new Utilidades();
+		p.setPiezas(u.leerPiezas("piezas.csv"));
+		p.setProv(u.leerProveedor("proveedores.csv"));
+		
+	}
+
+}

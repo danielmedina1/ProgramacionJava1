@@ -1,0 +1,11 @@
+package ferreteria;
+
+public class Programa {
+	public static void main(String[] args) {
+		Programa p=new Programa();
+		Utilidades u=new Utilidades();
+		p.setPieza(u.leerPiezas("piezas.csv"));
+		
+	}
+
+}

@@ -1,0 +1,42 @@
+package Unidad4Actividades;
+
+import java.util.Arrays;
+
+public class Matrices6 {
+
+	public static void main(String[] args) {
+		int m[][]=new int[10][10];
+		
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[0].length; j++) {
+				m[i][j]=(int)(1+Math.random()*100);
+				System.out.print(m[i][j]+"\t");
+			}
+			System.out.println();
+		}
+		diagonal(m);
+	}
+	
+	private static void diagonal(int m[][]) {
+		int max=1, min=100, x=0;
+		float media=0;
+		int d[]=new int[10];
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[0].length; j++) {
+				if(m[i][j]==m[x][x]) {
+					d[x]=m[i][j];
+					media=media+m[i][j];
+					if(m[i][j]<min) {min=m[i][j];}
+					if(m[i][j]>max) {max=m[i][j];}
+				}
+			}
+			x++;
+		}
+		media=media/10;
+		System.out.println();
+		System.out.println("La diagonal es: "+Arrays.toString(d));
+		System.out.println("El maximo es: "+max);
+		System.out.println("El minimo es: "+min);
+		System.out.println("La media es: "+media);
+	}
+}

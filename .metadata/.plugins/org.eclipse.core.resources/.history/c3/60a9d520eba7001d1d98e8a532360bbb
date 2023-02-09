@@ -1,0 +1,25 @@
+package agenda;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		//1)Imprimir agenda
+		//2)Añadir Contacto
+		//3)Eliminar Contacto
+		//4)Salir
+		
+		Agenda a = new Agenda();
+		a.cargarAgenda("contactos.bin");
+		menu();
+	}
+
+	private static void menu() {
+		System.out.println("Seleccione una opcion: ");
+		System.out.println("1.Imprimir agenda");
+		System.out.println("2.Añadir Contacto");
+		System.out.println("3.Eliminar contacto");
+		System.out.println("4.Salir");
+		
+	}
+
+}
