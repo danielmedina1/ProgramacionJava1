@@ -1,0 +1,36 @@
+asistente-nombreActividad-hora-codigoAlumno
+Fernando Pérez-Yoga-9.15-1
+Carmen García-Yoga-11.15-2
+Fernando Pérez-Bike-13.15-3
+Lucia Gonzales-Yoga-9.15-4
+Gustavo Sánchez-Bike-13.15-5
+Gonzalo Pérez-Pilates-19.15-5
+Hector García-Yoga-9.15-4
+Luis Fernandez-Yoga-11.15-3
+Isabel Sánchez-Yoga-11.15-2
+Luisa Fernandez-Yoga-9.15-1
+Gustavo Sánchez-Yoga-9.15-2
+Gonzalo Pérez-Yoga-9.15 -3
+Miguel Gonzales-Yoga-9.15-4
+Pedro Fernandez-Pilates-19.15-5
+Angela Sánchez-Pilates-19.15-1
+Lucrecia Pérez-Yoga-11.15 -2
+Lucas Gonzales-Bike-13.15-3
+María Gonzales-Yoga-11.15-4
+Carlos García-Yoga-11.15-5
+Hector García-Bike-13.15-5
+Luisa Fernandez-Bike-13.15-5
+David García-Pilates-19.15-4
+Pedro Fernandez-Zumba-19.15-4
+Angela Sánchez-Zumba-19.15-3
+Rodrigo Pérez-Zumba-13.15 -3
+Miguel Gonzales-Pilates-19.15-2
+Martín Gonzales-Zumba-13.15-2
+Diego García-Zumba-13.15-1
+Marisa Fernandez-Zumba-13.15-1
+Lourdes Sánchez-Zumba-13.15-1
+Rodrigo Pérez-Step-17.15 -2
+Martín Gonzales-Zumba-17.15-3
+Diego García-Zumba-17.15-4
+Marisa Fernandez-Zumba-17.15-5
+Lourdes Sánchez-Zumba-17.15-1
